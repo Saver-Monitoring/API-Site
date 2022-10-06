@@ -43,7 +43,7 @@
                         <label class="form__label2" for="name">Senha</label>
                     </div><br><br>
                     <a href="#">
-                        <button class="avancar">
+                        <button onclick="cadastrar()" class="avancar">
                             <span class="label">Avançar</span>
                             <span class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -69,10 +69,13 @@
             </div>
         </div>
     </div>
+    <div id="cardErro">
+        <span id="mensagem_erro"></span>
+    </div>
 </body>
 <script>
     function cadastrar() {
-        aguardar();
+        // aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
@@ -80,9 +83,8 @@
         var emailVar = email_input.value;
         var cnpjVar = cnpj_input.value;
         var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-        if (nomeVar == "" || emailVar == "" || cnpjVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || emailVar == "" || cnpjVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Todos os campos precisam ser preenchidos";
 
@@ -92,12 +94,12 @@
         else {
             setInterval(sumirMensagem, 5000)
         }
-        if (senhaVar != confirmacaoSenhaVar) {
+        if (senhaVar == "") {
             cardErro.style.display = "block";
             mensagem_erro.innerHTML = "As senhas precisam ser iguais";
         } else {
             setInterval(sumirMensagem, 5000)
-            
+
             // Enviando o valor da nova input
             fetch("/usuarios/cadastrar", {
                 method: "POST",
