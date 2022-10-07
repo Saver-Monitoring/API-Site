@@ -1,6 +1,6 @@
 // sessão
 function validarSessao() {
-    aguardar();
+    // aguardar();
 
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
@@ -14,16 +14,16 @@ function validarSessao() {
         }
         b_usuario.innerHTML = nome;
 
-        finalizarAguardar();
+        // finalizarAguardar();
     } else {
         window.location = "login.html";
     }
 }
 
 function limparSessao() {
-    aguardar();
+    // aguardar();
     sessionStorage.clear();
-    finalizarAguardar();
+    // finalizarAguardar();
     window.location = "login.html";
 }
 
