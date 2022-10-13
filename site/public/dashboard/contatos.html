@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saver | Dashboard</title>
+    <title>Saver | Contatos</title>
 
     <!-- CSS -->
     <link rel="shortcut icon" href="../assets/logosfundo3.svg">
@@ -13,10 +13,11 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/styledash.css">
     <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/ajuda.css">
 
 <body onload="validarSessao(), atualizarFeed()">
     <div class="container">
-        
+
         <!-- COMEÇO ESQUERDA  -->
         <div class="sidebar">
             <div class="logo_content">
@@ -96,45 +97,8 @@
 
     <!-- COMEÇO MAIN (MEIO)  -->
     <div class="home_content">
-        <div class="text">Dashboard</div>
+        <div class="text">Contatos</div>
     </div>
-    <main>
-        <br>
-        <div class="grafico">
-            <div class="grafico1">
-                <div class="insights">
-                    <div class="sales1">
-                        <span class="material-icons-sharp">poll</span><b class="tit-chart">Temperatura</b><br>
-                        <div>
-                            <canvas id="myChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="insights1">
-                    <div class="sales1">
-                        <span class="material-icons-sharp">show_chart</span><b class="tit-chart">Fluxo de
-                            Dados</b><br>
-                        <div>
-                            <canvas id="myChart2"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="grafico2">
-                <div class="insights2">
-                    <div class="sales">
-                        <span class="material-icons-sharp">donut_large</span><b class="tit-chart1">Memória</b><br>
-                        <div>
-                            <canvas id="myChart3"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </main>
-    <!-- FIM MAIN (MEIO)  -->
-
 
 </body>
 
@@ -146,110 +110,3 @@
 <script src="../js/funcoes.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://kit.fontawesome.com/4ea0191552.js" crossorigin="anonymous"></script>
-
-<script>
-    /*Gráfico de Barras*/
-    const labels = [
-        '06:00',
-        '08:00',
-        '10:00',
-        '12:00',
-        '14:00',
-        '16:00',
-    ];
-
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Perigo',
-            backgroundColor: ['#c94236'],
-            borderColor: '',
-            data: [0, 0, 0, 22, 6, 0],
-        },
-        {
-            label: 'Normal',
-            backgroundColor: ['#2C92D5'],
-            borderColor: '',
-            data: [15, 17],
-        },
-        {
-            label: 'Alerta',
-            backgroundColor: ['#d3b323'],
-            borderColor: '',
-            data: [0, 0, 13, 0, 0, 19],
-        },
-        ]
-    }
-    /*Gráfico de Barras*/
-    const labels2 = [
-        '06:00',
-        '08:00',
-        '10:00',
-        '12:00',
-        '14:00',
-        '16:00',
-    ];
-
-    const data2 = {
-        labels: labels2,
-        datasets: [{
-            label: 'Rack 1',
-            backgroundColor: ['#2C92D5'],
-            borderColor: '#2C92D5',
-            data: [680, 700, 730, 750, 760],
-        },
-        ]
-    }
-    /*Gráfico de Donut*/
-    const labels3 = [
-        'Rack 1'
-    ];
-
-    const data3 = {
-        labels: labels3,
-        datasets: [{
-            label: 'Memória',
-            backgroundColor: [
-                '#d3b323', 'transparent'],
-            borderColor: '#a2a2a2',
-            data: [54, 46],
-        },
-        ]
-    };
-
-
-    const config = {
-        type: 'bar',
-        data: data,
-        options: {}
-    };
-
-    const config2 = {
-        type: 'line',
-        data: data2,
-        options: {}
-    };
-
-    const config3 = {
-        type: 'doughnut',
-        data: data3,
-        options: {}
-    };
-</script>
-
-<script>
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
-
-    const myChart2 = new Chart(
-        document.getElementById('myChart2'),
-        config2
-    );
-
-    const myChart3 = new Chart(
-        document.getElementById('myChart3'),
-        config3
-    );
-</script>
