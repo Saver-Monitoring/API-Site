@@ -611,3 +611,36 @@ main .recent-order a {
     background: transparent;
     color: var(--color-dark);
 }
+
+/* --------------------- HISTORICO -------------------  */
+
+.card-historico  {
+    width: 890px;
+    height: 554px;
+    background: transparent;
+    border: 2px solid #dce1eb;
+    box-shadow: 2px 2px 15px #a3bdcc;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    font-size: 30PX;
+    color: #677483;
+    margin-left: 80px;
+    margin-top: 30px;
+    border-radius: 10px;
+  }
+  
+  .card-historico:hover {
+    color: #191919;
+    box-shadow: 2px 2px 15px #dce1eb inset;
+  }
+
+  .card-historico .card-conteudo {
+    display: flex;
+    align-items: center;
+  }
+
+  .txt-conteudo{
+    margin-left: -450px;
+  }
+  
