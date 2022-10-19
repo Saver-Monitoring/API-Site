@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -10,10 +10,13 @@
     <!-- CSS -->
     <link rel="shortcut icon" href="../assets/logosfundo3.svg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
-    <link rel="stylesheet" href="styledash.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/styledash.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
 
-<body onload="validarSessao(), atualizarFeed()">
+<body >
     <div class="container">
+<<<<<<< HEAD
 
         <!-- COMEÇO ESQUERDA  -->
         <aside>
@@ -151,10 +154,113 @@
                             <div>
                                 <canvas id="myChart3"></canvas>
                             </div>
+=======
+        
+        <!-- COMEÇO ESQUERDA  -->
+        <div class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <img src="../assets/logosfundo3.svg">
+                    <div class="logo_name">Saver</div>
+                </div>
+                <i class='bx bx-menu' id="btn"></i>
+            </div>
+            <ul class="nav_list">
+                <li>
+                    <a href="dashboard.html">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="links_name">Dashboard</span>
+                    </a>
+                    <span class="tooltip">Dashboard</span>
+                </li>
+                <li>
+                    <a href="historico.html">
+                        <i class='bx bx-history'></i>
+                        <span class="links_name">Histórico</span>
+                    </a>
+                    <span class="tooltip">Histórico</span>
+                </li>
+                <li>
+                    <a href="informacoes.html">
+                        <i class='bx bx-info-circle'></i>
+                        <span class="links_name">Informações</span>
+                    </a>
+                    <span class="tooltip">Informações</span>
+                </li>
+                <li>
+                    <a href="contatos.html">
+                        <i class='bx bx-message-dots'></i>
+                        <span class="links_name">Contatos</span>
+                    </a>
+                    <span class="tooltip">Contatos</span>
+                </li>
+                <li>
+                    <a href="ajuda.html">
+                        <i class='bx bx-help-circle'></i>
+                        <span class="links_name">Ajuda</span>
+                    </a>
+                    <span class="tooltip">Ajuda</span>
+                </li>
+                <li>
+                    <a href="dependente.html">
+                        <i class='bx bx-user-plus'></i>
+                        <span class="links_name">Dependente</span>
+                    </a>
+                    <span class="tooltip">Dependente</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="theme-toggler">
+                            <i class='bx bx-sun'></i>
+                            <span class="links_name">Tema</span>
+                    </a>
+                    <span class="tooltip">Alternar Tema</span>
+        </div>
+        </li>
+        </ul>
+        <div class="profile_content">
+            <div class="profile">
+                <div class="profile_details">
+                    <img src="../assets/user.png">
+                    <div class="name_job">
+                        <div id="b_usuario" class="name">Usuário</div>
+                        <div class="job">Supervisor</div>
+                    </div>
+                </div>
+                <a href="../login.html" class='bx bx-log-out' id="log_out"></a>
+            </div>
+        </div>
+    </div>
+    <!-- FIM ESQUERDA  -->
+
+    <!-- COMEÇO MAIN (MEIO)  -->
+    <div class="home_content">
+        <div class="text">Dashboard</div>
+    </div>
+    <main>
+        <br>
+        <div class="grafico">
+            <div class="grafico1">
+                <div class="insights">
+                    <div class="sales1">
+                        <span class="material-icons-sharp">poll</span><b class="tit-chart">Temperatura</b><br>
+                        <div>
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="insights1">
+                    <div class="sales1">
+                        <span class="material-icons-sharp">show_chart</span><b class="tit-chart">Fluxo de
+                            Dados</b><br>
+                        <div>
+                            <canvas id="myChart2"></canvas>
+>>>>>>> 9c2c5c63e8665b53532a1151defb499ce6450247
                         </div>
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <div class="recent-order">
                 <h2>Dados Recentes</h2>
                 <table>
@@ -202,6 +308,22 @@
             </div>
         </main>
         <!-- FIM MAIN (MEIO)  -->
+=======
+            <div class="grafico2">
+                <div class="insights2">
+                    <div class="sales">
+                        <span class="material-icons-sharp">donut_large</span><b class="tit-chart1">Memória</b><br>
+                        <div>
+                            <canvas id="myChart3"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!-- FIM MAIN (MEIO)  -->
+>>>>>>> 9c2c5c63e8665b53532a1151defb499ce6450247
 
 
 </body>
@@ -209,7 +331,12 @@
 </html>
 
 <!-- JS -->
+<<<<<<< HEAD
 <script src="index.js"></script>
+=======
+<script src="../js/sidebar.js"></script>
+<script src="../js/index.js"></script>
+>>>>>>> 9c2c5c63e8665b53532a1151defb499ce6450247
 <script src="../js/funcoes.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://kit.fontawesome.com/4ea0191552.js" crossorigin="anonymous"></script>
@@ -263,7 +390,7 @@
             label: 'Rack 1',
             backgroundColor: ['#2C92D5'],
             borderColor: '#2C92D5',
-            data: [680, 700, 730, 750, 760, 735],
+            data: [680, 700, 730, 750, 760],
         },
         ]
     }

@@ -23,7 +23,7 @@ body {
 
 #header .navbar-collapse {
     width: auto;
-    justify-content: space-evenly;
+    justify-content: flex-end;
 }
 
 #header .nav-link {
@@ -357,4 +357,7 @@ body {
 
 #img-time {
     height: 45px;
+}
+.img-data{
+    margin-left: 40%;
 }
