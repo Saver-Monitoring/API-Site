@@ -558,3 +558,52 @@ body {
    .span-retorno1 a{
     color: #116399;
    }
+
+
+
+   /* ----------- validacao login ---------------- */
+
+   .loading-div {
+    width: 20px;
+    margin: auto;
+    display: none;
+  }
+  
+  .loading-div img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .alerta_erro{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+
+  .card_erro {
+    display: none;
+    background-color: #fff;
+    color: black;
+    width: 230px;
+    position: fixed;
+    border-radius: 7px;
+    border: #116399 solid;
+    padding: 5px;
+    margin-right: -25%;
+    box-shadow: 0 1px 5px #666667;
+  }
+  
+  .card_erro #mensagem_erro{
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .banner #div_erros_login {
+    margin-top: 15px;
+  }
+
+  .spanErro {
+    font-size: 0.7em;
+    color: darkred;
+    margin-bottom: 3%;
+}
