@@ -13,148 +13,10 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/styledash.css">
     <link rel="stylesheet" href="../css/sidebar.css">
+    
 
-<body >
+<body>
     <div class="container">
-<<<<<<< HEAD
-
-        <!-- COMEÇO ESQUERDA  -->
-        <aside>
-            <div class="right">
-                <div class="profile">
-                    <div class="info">
-                        <div class="imagem-profile">
-                            <i class="fa-solid fa-circle-user fa-6x"></i>
-                        </div>
-                        <h3>Olá,
-                            <br>
-                            <span id="b_usuario">usuário</span>!
-                        </h3>
-                        <small class="text-muted">Admin</small>
-                    </div>
-                </div><br>
-            </div>
-            <div class="sidebar">
-                <a>
-                    <a href="#">
-                        <span class="material-icons-sharp">dashboard</span>
-                    <h3>Dashboard</h3>
-                    </a>
-                    
-                    <a href="historico.html">
-                        <span class="material-icons-sharp">history</span>
-                        <h3>Histórico</h3>
-                    </a>
-                    <a href="informacoes.html">
-                        <span class="material-icons-sharp">info</span>
-                        <h3>Informações</h3>
-                    </a>
-                    <a href="#">
-                        <span class="material-icons-sharp">contact_support</span>
-                        <h3>Contatos</h3>
-                    </a>
-                    <a href="#">
-                        <span class="material-icons-sharp">help_center</span>
-                        <h3>Ajuda</h3>
-                    </a>
-                    <a href="#">
-                        <span class="material-icons-sharp">group_add</span>
-                        <h3>Adicionar dependente</h3>
-                    </a>
-                    <a href="../login.html" class="btn-logout" onclick="limparSessao()">
-                        <span class="material-icons-sharp">exit_to_app</span>
-                        <h3>Logout</h3>
-                    </a>
-
-        </aside>
-        <!-- FIM ESQUERDA  -->
-
-        <!-- COMEÇO MAIN (MEIO)  -->
-        <main>
-            <div class="header">
-
-                <h1>Dashboard</h1>
-                <div class="top">
-                    <div class="theme-toggler">
-                        <span class="material-icons-sharp active">light_mode</span>
-                        <span class="material-icons-sharp">dark_mode</span>
-                    </div>
-                    <div class="date">
-                        <input type="date">
-                    </div>
-                </div><br>
-                <div class="legenda-pai">
-                    <div class="legenda">
-                        <b class="text-legenda">NORMAL</b>
-                    </div>
-                    <div class="legenda1">
-                        <b class="text-legenda1">ATENÇÃO</b>
-                    </div>
-                    <div class="legenda2">
-                        <b class="text-legenda2">PERIGO</b>
-                    </div>
-                </div>
-            </div>
-            <div class="kpi-pai">
-                <div class="kpi">
-                    <b style="font-size: 14px" class="tit-kpi">Temperatura</b>
-                    <span class="material-icons-sharp">thermostat</span>
-                    <div class="text-kpi">
-                        26°C
-                    </div>
-                </div>
-                <div class="kpi1">
-                    <b style="font-size: 14px" class="tit-kpi1">Memória</b>
-                    <span class="material-icons-sharp">memory</span>
-                    <div class="text-kpi1">
-                        72%
-                    </div>
-                </div>
-                <div class="kpi2">
-                    <b style="font-size: 14px" class="tit-kpi2">Desempenho <br> (CPU)</b><span
-                        class="material-icons-sharp">leaderboard</span>
-                    <div class="text-kpi2">
-                        51%
-                    </div>
-                </div>
-                <div class="kpi3">
-                    <b style="font-size: 14px" class="tit-kpi3">Fluxo de Dados</b><span
-                        class="material-icons-sharp">query_stats</span>
-                    <div class="text-kpi3">
-                        1200/m
-                    </div>
-                </div>
-            </div>
-
-            <br>
-            <div class="grafico">
-                <div class="grafico1">
-                    <div class="insights">
-                        <div class="sales1">
-                            <span class="material-icons-sharp">poll</span><b class="tit-chart">Temperatura</b><br>
-                            <div>
-                                <canvas id="myChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="insights1">
-                        <div class="sales1">
-                            <span class="material-icons-sharp">show_chart</span><b class="tit-chart">Fluxo de
-                                Dados</b><br>
-                            <div>
-                                <canvas id="myChart2"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grafico2">
-                    <div class="insights2">
-                        <div class="sales">
-                            <span class="material-icons-sharp">donut_large</span><b class="tit-chart1">Memória</b><br>
-                            <div>
-                                <canvas id="myChart3"></canvas>
-                            </div>
-=======
         
         <!-- COMEÇO ESQUERDA  -->
         <div class="sidebar">
@@ -235,80 +97,40 @@
 
     <!-- COMEÇO MAIN (MEIO)  -->
     <div class="home_content">
-        <div class="text">Dashboard</div>
+        <div class="text">Visualização de gráficos</div>
     </div>
     <main>
         <br>
         <div class="grafico">
-            <div class="grafico1">
+            <div class="grafico1 row-cols-1">
                 <div class="insights">
                     <div class="sales1">
-                        <span class="material-icons-sharp">poll</span><b class="tit-chart">Temperatura</b><br>
+                        <span class="material-icons-sharp">poll</span><b class="tit-chart">Uso de CPU</b><br>
                         <div>
                             <canvas id="myChart"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="insights1">
-                    <div class="sales1">
-                        <span class="material-icons-sharp">show_chart</span><b class="tit-chart">Fluxo de
-                            Dados</b><br>
-                        <div>
-                            <canvas id="myChart2"></canvas>
->>>>>>> 9c2c5c63e8665b53532a1151defb499ce6450247
-                        </div>
+            </div>
+            <div class="insights2">
+                <div class="sales2">
+                    <span class="material-icons-sharp">show_chart</span><b class="tit-chart">Memória</b><br>
+                    <div>
+                        <canvas id="myChart2"></canvas>
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-            <div class="recent-order">
-                <h2>Dados Recentes</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th id="numero">Número Rack</th>
-                            <th id="localizacao">Localização Máquina</th>
-                            <th id="status">Status</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>12345</td>
-                            <td>Bloco 8D</td>
-                            <td class="warning">Instável</td>
-                            <td class="primary">Detalhes</td>
-                        </tr>
-                        <tr>
-                            <td>12345</td>
-                            <td>Bloco 8D</td>
-                            <td class="primary">Estável</td>
-                            <td class="primary">Detalhes</td>
-                        </tr>
-                        <tr>
-                            <td>12345</td>
-                            <td>Bloco 8D</td>
-                            <td class="warning">Instável</td>
-                            <td class="primary">Detalhes</td>
-                        </tr>
-                        <tr>
-                            <td>12345</td>
-                            <td>Bloco 8D</td>
-                            <td class="primary">Estável</td>
-                            <td class="primary">Detalhes</td>
-                        </tr>
-                        <tr>
-                            <td>12345</td>
-                            <td>Bloco 8D</td>
-                            <td class="warning">Instável</td>
-                            <td class="primary">Detalhes</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </main>
-        <!-- FIM MAIN (MEIO)  -->
-=======
+            <!-- <div class="grafico3">
+                <div class="insights3">
+                    <div class="sales3">
+                        <span class="material-icons-sharp">show_chart</span><b class="tit-chart1">Uso da cpu</b><br>
+                        <div>
+                            <canvas id="myChart2"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+<!-- 
             <div class="grafico2">
                 <div class="insights2">
                     <div class="sales">
@@ -318,12 +140,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
     </main>
     <!-- FIM MAIN (MEIO)  -->
->>>>>>> 9c2c5c63e8665b53532a1151defb499ce6450247
 
 
 </body>
@@ -331,12 +152,8 @@
 </html>
 
 <!-- JS -->
-<<<<<<< HEAD
-<script src="index.js"></script>
-=======
 <script src="../js/sidebar.js"></script>
 <script src="../js/index.js"></script>
->>>>>>> 9c2c5c63e8665b53532a1151defb499ce6450247
 <script src="../js/funcoes.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://kit.fontawesome.com/4ea0191552.js" crossorigin="anonymous"></script>

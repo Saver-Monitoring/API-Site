@@ -15,7 +15,7 @@ body {
 .card {
     width: 30rem;
     cursor: pointer;
-    float: right;
+    margin-left: 37%;
     padding-right: 2rem;
     padding-top: 2rem;
   }
@@ -70,6 +70,7 @@ body {
   .back {
     transform: rotateY(0.5turn);
     background-color: #2C92D5;
+    width: 20rem;
   }
   
   .description {
@@ -84,6 +85,7 @@ body {
     max-width: 180px;
     transform-style: preserve-3d;
     transform: translateZ(5rem);
+    
   }
   
   .form__field {
@@ -98,6 +100,7 @@ body {
     background: transparent;
     transition: border-color 0.2s;
     transform-style: preserve-3d;
+    margin-left: 30%;
   }
   
   .form__field::placeholder {
@@ -119,6 +122,7 @@ body {
     color: #f0f0f0;
     pointer-events: none;
     transform-style: preserve-3d;
+    margin-left: 30%;
   }
   
   .form__field:focus {
@@ -149,7 +153,7 @@ body {
   .card2 {
     width: 30rem;
     cursor: pointer;
-    float: left;
+    margin-left: 33.5%;
     padding-left: 2rem;
     padding-top: 2rem;
   }
@@ -233,6 +237,7 @@ body {
     background: transparent;
     transition: border-color 0.2s;
     transform-style: preserve-3d;
+    margin-left: 30%;
   }
   
   .form__field2::placeholder {
@@ -243,6 +248,7 @@ body {
     font-size: 17px;
     cursor: text;
     top: 20px;
+
   }
   
   .form__label2 {
@@ -253,6 +259,7 @@ body {
     font-size: 17px;
     color: #f0f0f0;
     pointer-events: none;
+    margin-left: 30%;
     transform-style: preserve-3d;
   }
   
@@ -307,7 +314,7 @@ body {
 
 .voltar {
     display: flex;
-    height: 3em;
+    height: 5vh;
     width: 100px;
     align-items: center;
     justify-content: center;
@@ -322,6 +329,8 @@ body {
     transform: translateZ(5rem);
     backface-visibility: hidden;
     font-weight: 700;
+    margin-left: 35%;
+    margin-top: -17px;
    }
 
    a{
@@ -342,8 +351,53 @@ body {
     font-size: 1.2em;
     transform: translateX(-5px);
    }
-   
+  
    .voltar:hover {
+    box-shadow: 4px 4px 11px var(--secundary);
+    transform: translateY(-2px);
+   }
+
+   .voltar2 {
+    display: flex;
+    height: 5vh;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee4b;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    border: none;
+    background: #fff;
+    transform-style: preserve-3d;
+    transform: translateZ(5rem);
+    backface-visibility: hidden;
+    font-weight: 700;
+    margin-left: 6.5rem;
+    margin-top: -17px;
+   }
+
+   a{
+    transform-style: preserve-3d;
+    transform: translateZ(3rem);
+    backface-visibility: hidden;
+    text-decoration: none;
+   }
+   
+   .voltar2 > svg {
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 20px;
+    transition: all 0.2s ease-in;
+   }
+   
+   .voltar2:hover > svg {
+    font-size: 1.2em;
+    transform: translateX(-5px);
+   }
+   
+   .voltar2:hover {
     box-shadow: 4px 4px 11px var(--secundary);
     transform: translateY(-2px);
    }
@@ -352,14 +406,13 @@ body {
 
 .avancar {
     display: flex;
-    height: 3em;
+    height: 5vh;
     width: 150px;
     align-items: center;
     justify-content: center;
     position: relative;
     font-size: 14px;
     letter-spacing: 2px;
-    height: 3em;
     padding: 0 3em;
     border: none;
     background-color: #f0f0f0;
@@ -373,6 +426,7 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: 0.5s;
+    margin-left: 28.5%;
    }
    
    .avancar::before {
@@ -415,4 +469,92 @@ body {
    .avancar:hover {
     box-shadow: 4px 4px 11px var(--secundary);
     transform: translateY(-2px);
+   }
+
+   .avancar2 {
+    display: flex;
+    height: 5vh;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 0 3em;
+    border: none;
+    background-color: #f0f0f0;
+    color: #191919;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-radius: 5px;
+    transform-style: preserve-3d;
+    transform: translateZ(3rem);
+    backface-visibility: hidden;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.5s;
+    margin-left: 5rem;
+   }
+   
+   .avancar2::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    height: 0px;
+    width: 100%;
+    transition: 0.5s;
+   }
+   
+   .avancar2 .label {
+    position: relative;
+   }
+   
+   .avancar2 .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3em;
+    width: 2em;
+    position: absolute;
+    top: 3em;
+    right: 0;
+    opacity: 0;
+    transition: 0.5s;
+   }
+   
+   .avancar2:hover::before {
+    height: 100%;
+   }
+   
+   .avancar2:hover .icon {
+    top: 0;
+    opacity: 1;
+   }
+
+   .avancar2:hover {
+    box-shadow: 4px 4px 11px var(--secundary);
+    transform: translateY(-2px);
+   }
+
+
+   /* ----------------texto span cadastro e login--------------------- */
+
+   .span-retorno{
+    font-size: 15px;
+    margin-top: 2rem;
+   }
+
+   .span-retorno1{ 
+    font-size: 15px;
+    margin-top: 2rem;
+   }
+
+   .span-retorno a{
+    color: #116399;
+   }
+
+   .span-retorno1 a{
+    color: #116399;
    }

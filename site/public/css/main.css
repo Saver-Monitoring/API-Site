@@ -3,3 +3,92 @@
 @import url(./global.css);
 @import url(./custom.css);
 @import url(./responsive.css);
+
+
+.navbar{
+    margin-left: -1% !important;
+    gap: 40% ;
+}
+
+#fotos{
+    padding-left: 8rem !important;
+}
+
+#icones{
+    padding-left: 5rem !important;
+}
+
+@media(min-width: 360px) and (max-width: 800px){
+    #header .navbar-collapse {
+        width: 100% !important;
+    }
+    #servicos a.destaque .img-container{
+        height: 120px !important;
+    }
+    #servicos a.destaque .img-container img {
+        max-height: 120px !important;
+    }
+    #fotos .servicos-texto .imagem {
+        padding: 10px 0 30px 0 ;
+    }
+    #fotos .servicos-texto .imagem img {
+        max-width: 150px;
+    }
+    #contato .email {
+        padding: 60px 30px 50px 30px ;
+    }
+    #contato .email form {
+        width: 100% ;
+        flex-direction: column ;
+    }
+    #contato ul {
+        padding-top: 30px !important;
+        justify-content: center !important;
+    }
+
+    #fotos{
+        margin-left: -15rem !important;
+    }
+    
+    #icones{
+        margin-left: -15rem !important;
+    }
+}
+
+
+@media(min-width: 7680px) and (max-width: 614px){
+    #header .navbar-collapse {
+        width: 100% !important;
+    }
+    #servicos a.destaque .img-container{
+        height: 120px !important;
+    }
+    #servicos a.destaque .img-container img {
+        max-height: 120px !important;
+    }
+    #fotos .servicos-texto .imagem {
+        padding: 10px 0 30px 0 ;
+    }
+    #fotos .servicos-texto .imagem img {
+        max-width: 150px;
+    }
+    #contato .email {
+        padding: 60px 30px 50px 30px ;
+    }
+    #contato .email form {
+        width: 100% ;
+        flex-direction: column ;
+    }
+    #contato ul {
+        padding-top: 30px !important;
+        justify-content: center !important;
+    }
+
+    #fotos{
+        margin-left: -15rem !important;
+    }
+    
+    #icones{
+        margin-left: -15rem !important;
+    }
+}
