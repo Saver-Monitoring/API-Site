@@ -36,7 +36,7 @@
                         <input required="" placeholder="Senha" id="senha_input" class="form__field" type="password">
                         <label class="form__label" for="name">Senha</label>
                         <br><br><br>
-                        <a onclick="entrar()" href="dashboard/dashboard.html">
+                        <a onclick="entrar()">
                             <button onclick="entrar()" class="avancar2">
                                 <span onclick="entrar()" class="label">Avançar</span>
                                 <span onclick="entrar()" class="icon">
@@ -138,7 +138,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/dashboard_Agroh.html";
+                        window.location = "dashboard/dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

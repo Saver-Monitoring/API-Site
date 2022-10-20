@@ -572,6 +572,7 @@ body {
   .loading-div img {
     height: 40px;
     width: 40px;
+    margin-top: 15px;
   }
 
   .alerta_erro{
@@ -589,7 +590,7 @@ body {
     border-radius: 7px;
     border: #116399 solid;
     padding: 5px;
-    margin-right: -25%;
+    margin-right: -45%;
     box-shadow: 0 1px 5px #666667;
   }
   
@@ -604,6 +605,6 @@ body {
 
   .spanErro {
     font-size: 0.7em;
-    color: darkred;
+    color: #fff;
     margin-bottom: 3%;
 }
