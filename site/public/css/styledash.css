@@ -131,7 +131,7 @@ main {
     width: 100%;
 }
 
-.grafico {3rem
+.grafico {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -547,18 +547,18 @@ main .recent-order a {
     cursor: pointer;
     width: 390px;
     height: 454px;
-    background: rgb(255, 255, 255);
+    background: var(--color-white);
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 255, .2);
+    border: 1px solid var(--color-sucess);
     transition: all .2s;
-    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    box-shadow: 5px 5px 7px 1px var(--color-sucess);
     position: absolute;
     margin-top: 10rem;
     margin-left: 18rem;
 }
 
 .card-dep:hover {
-    box-shadow: -12px 12px 2px -1px rgba(0, 0, 255, .2);
+    box-shadow: -5px 5px 7px -1px var(--color-sucess);
 }
 
 
@@ -568,7 +568,7 @@ main .recent-order a {
     padding-left: 5px;
     width: 370px;
     margin: 12px 5px;
-    --accent-color: var(--color-danger);
+    --accent-color: var(--color-sucess);
 }
 
 /* .textInputWrapper:before {
@@ -590,21 +590,21 @@ main .recent-order a {
 }
 
 .textInputWrapper:focus-within:before {
-    border-bottom: 5px solid var(--accent-color);
+    border-bottom: 5px solid var(--color-primary);
 }
 
 .textInputWrapper:before {
     transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    border-bottom: 5px solid rgba(0, 0, 0, 0.42);
+    border-bottom: 5px solid var(--color-dark);
 }
 
 .textInputWrapper:focus-within:before {
-    border-bottom: 5px solid var(--accent-color);
+    border-bottom: 5px solid var(--color-primary);
     transform: scaleX(1);
 }
 
 .textInputWrapper:focus-within:after {
-    border-bottom: 5px solid var(--accent-color);
+    border-bottom: 5px solid var(--color-primary);
     transform: scaleX(1);
 }
 
@@ -613,8 +613,8 @@ main .recent-order a {
     transform: scaleX(0);
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
     will-change: transform;
-    border-bottom: 5px solid var(--accent-color);
-    border-bottom-color: var(--accent-color);
+    border-bottom: 5px solid var(--color-primary);
+    border-bottom-color: var(--color-primary);
 }
 
 .textInput::placeholder {
@@ -632,7 +632,7 @@ main .recent-order a {
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 200ms;
     transition-property: background-color;
-    color: #e8e8e8;
+    color: #c2c2c2;
     font-size: 14px;
     font-weight: 500;
     padding: 12px;
@@ -650,13 +650,12 @@ main .recent-order a {
 .textInputWrapper:focus-within .textInput,
 .textInputWrapper .textInput:focus,
 .textInputWrapper .textInput:active {
-    background-color: #353535;
+    background-color: black;
 }
 
 .textInputWrapper:focus-within .textInput::placeholder {
     opacity: 0;
 }
-
 
 .box {
     width: 140px;
@@ -674,6 +673,7 @@ main .recent-order a {
     font-weight: 900;
     margin-top: 30px;
     margin-left: 8.2rem;
+    color: var(--color-dark);
 }
 
 .box:before {
@@ -687,6 +687,7 @@ main .recent-order a {
     border-left: 4px solid transparent;
     box-sizing: border-box;
     transform: translateX(100%);
+    color: var(--color-dark);
 }
 
 .box:after {
@@ -700,21 +701,22 @@ main .recent-order a {
     border-right: 4px solid transparent;
     box-sizing: border-box;
     transform: translateX(-100%);
+    color: var(--color-dark);
 }
 
 .box:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px var(--color-dark);
 }
 
 .box:hover:before {
-    border-color: #262626;
+    border-color: var(--color-dark);
     height: 100%;
     transform: translateX(0);
     transition: .3s transform linear, .3s height linear .3s;
 }
 
 .box:hover:after {
-    border-color: #262626;
+    border-color: var(--color-dark);
     height: 100%;
     transform: translateX(0);
     transition: .3s transform linear, .3s height linear .5s;
@@ -729,10 +731,8 @@ button {
     background: transparent;
 }
 
-
 /* ----------------------  historico ------------------------- */
 
-/* From uiverse.io by @adamgiebl */
 .card-hist {
     width: 70rem;
     height: 554px;
