@@ -31,10 +31,7 @@
                         <input required="" placeholder="Nome" id="nome_input" class="form__field2" type="input">
                         <label class="form__label2" for="name">Nome</label>
                     </div>
-                    <div class="form__group field2">
-                        <input required="" placeholder="CPF/CNPJ" id="cnpj_input" class="form__field2" type="input">
-                        <label class="form__label2" for="name">CPF/CNPJ</label>
-                    </div>
+                    
                     <div class="form__group field2">
                         <input required="" placeholder="E-mail" id="email_input" class="form__field2" type="input">
                         <label class="form__label2" for="name">E-mail</label>
@@ -42,7 +39,24 @@
                     <div class="form__group field2">
                         <input required="" placeholder="Senha" id="senha_input" class="form__field2" type="password">
                         <label class="form__label2" for="name">Senha</label>
-                    </div><br><br>
+                    </div>
+                    <div class="form__group field2">
+                        <input required="" placeholder="CPF" id="cpf_input" class="form__field2" type="input">
+                        <label class="form__label2" for="name">CPF</label>
+                    </div>
+                    <div class="form__group field2">
+                        <input required="" placeholder="CNPJ" id="cnpj_input" class="form__field2" type="input">
+                        <label class="form__label2" for="name">CNPJ</label>
+                    </div>
+                    <div class="form__group field2">
+                        <input required="" placeholder="Rua" id="rua_input" class="form__field2" type="input">
+                        <label class="form__label2" for="name">Rua</label>
+                    </div>
+                    <div class="form__group field2">
+                        <input required="" placeholder="Número" id="numero_input" class="form__field2" type="input">
+                        <label class="form__label2" for="name">Número</label>
+                    </div>                    
+                    <br><br>
                     <a onclick="cadastrar()">
                         <button class="avancar">
                             <span class="label">Avançar</span>
@@ -96,7 +110,10 @@
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
+        var cpfVar = cpf_input.value;
         var cnpjVar = cnpj_input.value;
+        var ruaVar = rua_input.value;
+        var numeroVar = numero_input.value;
 
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || cnpjVar == "") {
