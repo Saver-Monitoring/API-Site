@@ -1,0 +1,23 @@
+@media(min-width: 375px) and (max-width: 768px){
+    .home_content{
+        left: 150px;
+        position: absolute;
+    }
+    main .recent-order {
+        margin-top: 5rem;
+        margin-left: 5.5rem;
+        margin-right: -5rem;
+    }
+}
+
+@media(min-width: 769px) and (max-width: 1084px){
+    .home_content{
+        left: 150px;
+        position: absolute;
+    }
+    main .recent-order {
+        margin-top: 3rem;
+        margin-left: 5.5rem;
+        margin-right: 0rem;
+    }
+}

@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saver | Dashboard</title>
+    <title>Document</title>
     <script src="../js/funcoes.js"></script>
-
-    <!-- CSS -->
     <link rel="shortcut icon" href="../assets/logosfundo3.svg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/styledash.css">
     <link rel="stylesheet" href="../css/sidebar.css">
     <link rel="stylesheet" href="../css/responsividade-dash.css">
-
-<!-- <body onload="validarSessao()"> -->
-    <div class="container">
+</head>
+<body>
+        <div class="container">
         
         <!-- COMEÇO ESQUERDA  -->
         <div class="sidebar">
@@ -30,39 +27,18 @@
             </div>
             <ul class="nav_list">
                 <li>
-                    <a href="dashboard.html">
+                    <a href="dash_comum.html">
                         <i class='bx bx-grid-alt'></i>
                         <span class="links_name">Dashboard</span>
                     </a>
                     <span class="tooltip">Dashboard</span>
                 </li>
                 <li>
-                    <a href="historico.html">
+                    <a href="dash_comum.html">
                         <i class='bx bx-history'></i>
                         <span class="links_name">Histórico</span>
                     </a>
                     <span class="tooltip">Histórico</span>
-                </li>
-                <li>
-                    <a href="informacoes.html">
-                        <i class='bx bx-info-circle'></i>
-                        <span class="links_name">Informações</span>
-                    </a>
-                    <span class="tooltip">Informações</span>
-                </li>
-                <li>
-                    <a href="contatos.html">
-                        <i class='bx bx-message-dots'></i>
-                        <span class="links_name">Contatos</span>
-                    </a>
-                    <span class="tooltip">Contatos</span>
-                </li>
-                <li>
-                    <a href="dependente.html">
-                        <i class='bx bx-user-plus'></i>
-                        <span class="links_name">Dependente</span>
-                    </a>
-                    <span class="tooltip">Dependente</span>
                 </li>
                 <li>
                     <a href="#">
@@ -87,81 +63,12 @@
             </div>
         </div>
     </div>
-    <!-- FIM ESQUERDA  -->
 
-    <!-- COMEÇO MAIN (MEIO)  -->
-    
     <div class="home_content">
-        <div class="text">Dashboard</div>
-    </div>
-    <div class="legenda-pai">
-        <div class="legenda">
-            <b class="text-legenda">NORMAL</b>
-        </div>
-        <div class="legenda1">
-            <b class="text-legenda1">ATENÇÃO</b>
-        </div>
-        <div class="legenda2">
-            <b class="text-legenda2">PERIGO</b>
-        </div>
+        <div class="text">Dashboard | Visualização de gráficos</div>
     </div>
     <main>
-    <div class="kpi-pai">
-        <div class="kpi">
-            <b style="font-size: 14px" class="tit-kpi">Uso de CPU</b>
-            <span class="material-icons-sharp">desktop_windows</span>
-            <div class="text-kpi">
-                87%
-            </div>
-        </div>
-        <div class="kpi1">
-            <b style="font-size: 14px" class="tit-kpi1">Memória</b>
-            <span class="material-icons-sharp">memory</span>
-            <div class="text-kpi1">
-                38%
-            </div>
-        </div>
-    </div>
-    <div class="recent-order">
-        <table>
-            <thead>
-                <tr>
-                    <th id="numero">Número Rack</th>
-                    <th id="localizacao">Localização Máquina</th>
-                    <th id="status">Status</th>
-                    <th>Mais Informações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-                
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-        
+        <br>
         <div class="grafico">
             <div class="grafico1 row-cols-1">
                 <div class="insights">
@@ -181,38 +88,12 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="grafico3">
-                <div class="insights3">
-                    <div class="sales3">
-                        <span class="material-icons-sharp">show_chart</span><b class="tit-chart1">Uso da cpu</b><br>
-                        <div>
-                            <canvas id="myChart2"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-<!-- 
-            <div class="grafico2">
-                <div class="insights2">
-                    <div class="sales">
-                        <span class="material-icons-sharp">donut_large</span><b class="tit-chart1">Memória</b><br>
-                        <div>
-                            <canvas id="myChart3"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
 
     </main>
-    <!-- FIM MAIN (MEIO)  -->
-
-
+    
 </body>
-
 </html>
-
-<!-- JS -->
 <script src="../js/sidebar.js"></script>
 <script src="../js/index.js"></script>
 <script src="../js/funcoes.js"></script>
