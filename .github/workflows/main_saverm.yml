@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'saverm'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DEE6B6D7C31D46099A4978171237F28A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_138B0DD57EB847EC91E012E170C5C93B }}
           package: .
