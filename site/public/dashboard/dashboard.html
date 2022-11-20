@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saver | Dashboard</title>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/index.js"></script>
     <script src="../js/funcoes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/4ea0191552.js" crossorigin="anonymous"></script>
 
     <!-- CSS -->
     <link rel="shortcut icon" href="../assets/logosfundo3.svg">
@@ -15,10 +19,11 @@
     <link rel="stylesheet" href="../css/styledash.css">
     <link rel="stylesheet" href="../css/sidebar.css">
     <link rel="stylesheet" href="../css/responsividade-dash.css">
+</head>
 
-<!-- <body onload="validarSessao()"> -->
+<body onload="validarSessao()">
     <div class="container">
-        
+
         <!-- COMEÇO ESQUERDA  -->
         <div class="sidebar">
             <div class="logo_content">
@@ -90,7 +95,7 @@
     <!-- FIM ESQUERDA  -->
 
     <!-- COMEÇO MAIN (MEIO)  -->
-    
+
     <div class="home_content">
         <div class="text">Dashboard</div>
     </div>
@@ -106,62 +111,62 @@
         </div>
     </div>
     <main>
-    <div class="kpi-pai">
-        <div class="kpi">
-            <b style="font-size: 14px" class="tit-kpi">Uso de CPU</b>
-            <span class="material-icons-sharp">desktop_windows</span>
-            <div class="text-kpi">
-                87%
+        <div class="kpi-pai">
+            <div class="kpi">
+                <b style="font-size: 14px" class="tit-kpi">Uso de CPU</b>
+                <span class="material-icons-sharp">desktop_windows</span>
+                <div class="text-kpi" id="cpu_kpi">
+                    87.5%
+                </div>
+            </div>
+            <div class="kpi1">
+                <b style="font-size: 14px" class="tit-kpi1">Memória</b>
+                <span class="material-icons-sharp">memory</span>
+                <div class="text-kpi1" id="ram_kpi">
+                    12.2 GiB
+                </div>
             </div>
         </div>
-        <div class="kpi1">
-            <b style="font-size: 14px" class="tit-kpi1">Memória</b>
-            <span class="material-icons-sharp">memory</span>
-            <div class="text-kpi1">
-                38%
-            </div>
+        <div class="recent-order">
+            <table>
+                <thead>
+                    <tr>
+                        <th id="numero">Número Rack</th>
+                        <th id="localizacao">Localização Máquina</th>
+                        <th id="status">Status</th>
+                        <th>Mais Informações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12345</td>
+                        <td>Bloco 8D</td>
+                        <td class="warning">Instável</td>
+                        <td class="primary"><a href="#">Detalhes</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>12345</td>
+                        <td>Bloco 8D</td>
+                        <td class="warning">Instável</td>
+                        <td class="primary"><a href="#">Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>12345</td>
+                        <td>Bloco 8D</td>
+                        <td class="warning">Instável</td>
+                        <td class="primary"><a href="#">Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>12345</td>
+                        <td>Bloco 8D</td>
+                        <td class="warning">Instável</td>
+                        <td class="primary"><a href="#">Detalhes</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </div>
-    <div class="recent-order">
-        <table>
-            <thead>
-                <tr>
-                    <th id="numero">Número Rack</th>
-                    <th id="localizacao">Localização Máquina</th>
-                    <th id="status">Status</th>
-                    <th>Mais Informações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-                
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-        
+
         <div class="grafico">
             <div class="grafico1 row-cols-1">
                 <div class="insights">
@@ -181,27 +186,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="grafico3">
-                <div class="insights3">
-                    <div class="sales3">
-                        <span class="material-icons-sharp">show_chart</span><b class="tit-chart1">Uso da cpu</b><br>
-                        <div>
-                            <canvas id="myChart2"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-<!-- 
-            <div class="grafico2">
-                <div class="insights2">
-                    <div class="sales">
-                        <span class="material-icons-sharp">donut_large</span><b class="tit-chart1">Memória</b><br>
-                        <div>
-                            <canvas id="myChart3"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
 
     </main>
@@ -212,116 +196,213 @@
 
 </html>
 
-<!-- JS -->
-<script src="../js/sidebar.js"></script>
-<script src="../js/index.js"></script>
-<script src="../js/funcoes.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://kit.fontawesome.com/4ea0191552.js" crossorigin="anonymous"></script>
-
 <script>
-    /*Gráfico de Barras*/
-    const labels = [
-        '06:00',
-        '08:00',
-        '10:00',
-        '12:00',
-        '14:00',
-        '16:00',
-    ];
 
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Perigo',
-            backgroundColor: ['#c94236'],
-            borderColor: '',
-            data: [0, 0, 0, 22, 6, 0],
-        },
-        {
-            label: 'Normal',
-            backgroundColor: ['#2C92D5'],
-            borderColor: '',
-            data: [15, 17],
-        },
-        {
-            label: 'Alerta',
-            backgroundColor: ['#d3b323'],
-            borderColor: '',
-            data: [0, 0, 13, 0, 0, 19],
-        },
-        ]
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    let proximaAtualizacao;
+
+    window.onload = obterDadosGrafico(1);
+
+    function alterarTitulo(idAquario) {
+        var tituloAquario = document.getElementById("myChart")
+        tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>Aquário " + idAquario + "</span>"
     }
-    /*Gráfico de Barras*/
-    const labels2 = [
-        '06:00',
-        '08:00',
-        '10:00',
-        '12:00',
-        '14:00',
-        '16:00',
-    ];
 
-    const data2 = {
-        labels: labels2,
-        datasets: [{
-            label: 'Rack 1',
-            backgroundColor: ['#2C92D5'],
-            borderColor: '#2C92D5',
-            data: [680, 700, 730, 750, 760],
-        },
-        ]
+    // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function obterDadosGrafico(idAquario) {
+        alterarTitulo(idAquario)
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idAquario);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
     }
-    /*Gráfico de Donut*/
-    const labels3 = [
-        'Rack 1'
-    ];
 
-    const data3 = {
-        labels: labels3,
-        datasets: [{
-            label: 'Memória',
-            backgroundColor: [
-                '#d3b323', 'transparent'],
-            borderColor: '#a2a2a2',
-            data: [54, 46],
-        },
-        ]
-    };
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta, idAquario) {
+        console.log('iniciando plotagem do gráfico...');
 
 
-    const config = {
-        type: 'bar',
-        data: data,
-        options: {}
-    };
+        /*Gráfico de Barras*/
+        const labels = [];
 
-    const config2 = {
-        type: 'line',
-        data: data2,
-        options: {}
-    };
+        const dadoCPU = {
+            labels: labels,
+            datasets: [{
+                label: '% de uso CPU',
+                backgroundColor: ['#c94236'],
+                borderColor: '',
+                data: [],
+            },
+            ]
+        }
+        /*Gráfico de Barras*/
+        const labels2 = [];
 
-    const config3 = {
-        type: 'doughnut',
-        data: data3,
-        options: {}
-    };
-</script>
+        const dadoRAM = {
+            labels: labels2,
+            datasets: [{
+                label: 'Uso de Memória RAM',
+                backgroundColor: ['#2C92D5'],
+                borderColor: '#2C92D5',
+                data: [],
+            },
+            ]
+        }
 
-<script>
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
 
-    const myChart2 = new Chart(
-        document.getElementById('myChart2'),
-        config2
-    );
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.momento_grafico);
+            labels2.push(registro.momento_grafico);
+            dadoCPU.datasets[0].data.push(registro.usoCPU);
+            dadoRAM.datasets[0].data.push(registro.usoRAM);
+        }
 
-    const myChart3 = new Chart(
-        document.getElementById('myChart3'),
-        config3
-    );
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Dados CPU:')
+        console.log(dadoCPU.datasets)
+        console.log('----------------------------------------------')
+        console.log('Labels:')
+        console.log(labels2)
+        console.log('Dados RAM:')
+        console.log(dadoRAM.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+
+        const config = {
+            type: 'line',
+            data: dadoCPU,
+            options: {}
+        };
+
+        const config2 = {
+            type: 'line',
+            data: dadoRAM,
+            options: {}
+        };
+
+        // Adicionando gráfico criado em div na tela
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+
+        const myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config2
+        );
+
+        setTimeout(() => atualizarGrafico(idAquario, dadoCPU, dadoRAM, myChart, myChart2), 2000);
+    }
+
+
+    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
+    // buscando a última medida inserida em tabela contendo as capturas, 
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function atualizarGrafico(idAquario, dadoCPU, dadoRAM, myChart, myChart2) {
+
+        fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico:`);
+                    console.log(`${dadoCPU}% de uso CPU`);
+                    console.log(`--------------------------------------------------`);
+                    console.log(`${dadoRAM} GiB de RAM sendo utilizada`);
+
+                    if (novoRegistro[0].momento_grafico == dadoCPU.labels[dadoCPU.labels.length - 1]) {
+                        console.log("---------------------------------------------------------------")
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                        console.log("Horário do novo dado capturado:")
+                        console.log(novoRegistro[0].momento_grafico)
+                        console.log("Horário do último dado capturado:")
+                        console.log(dadoCPU.labels[dadoCPU.labels.length - 1])
+                        console.log("---------------------------------------------------------------")
+                        cpu_kpi.innerHTML = `${novoRegistro[0].usoCPU}%`
+                    } else {
+                        // tirando e colocando valores no gráfico
+                        dadoCPU.labels.shift(); // apagar o primeiro
+                        dadoCPU.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+
+                        dadoCPU.datasets[0].data.shift();  // apagar o primeiro de umidade
+                        dadoCPU.datasets[0].data.push(novoRegistro[0].usoCPU); // incluir uma nova medida de umidade
+                        cpu_kpi.innerHTML = `${novoRegistro[0].usoCPU}%`
+
+
+                        myChart.update();
+                    }
+
+                    if (novoRegistro[0].momento_grafico == dadoRAM.labels[dadoRAM.labels.length - 1]) {
+                        console.log("---------------------------------------------------------------")
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                        console.log("Horário do novo dado capturado:")
+                        console.log(novoRegistro[0].momento_grafico)
+                        console.log("Horário do último dado capturado:")
+                        console.log(dadoRAM.labels[dadoRAM.labels.length - 1])
+                        console.log("---------------------------------------------------------------")
+                        ram_kpi.innerHTML = `${novoRegistro[0].usoRAM} GiB`
+                    } else {
+                        // tirando e colocando valores no gráfico
+                        dadoRAM.labels2.shift(); // apagar o primeiro
+                        dadoRAM.labels2.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+
+                        dadoRAM.datasets[0].data.shift();  // apagar o primeiro de umidade
+                        dadoRAM.datasets[0].data.push(novoRegistro[0].usoRAM); // incluir uma nova medida de umidade
+                        ram_kpi.innerHTML = `${novoRegistro[0].usoRAM} GiB`
+
+                        myChart2.update();
+                    }
+
+                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dadoCPU, dadoRAM, myChart, myChart2), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dadoCPU, dadoRAM, myChart, myChart2), 2000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
 </script>
