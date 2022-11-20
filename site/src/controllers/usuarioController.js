@@ -7,7 +7,6 @@ function testar(req, res) {
     res.json("ESTAMOS FUNCIONANDO!");
 }var usuarioModel = require("../models/usuarioModel");
 
-
 function listar(req, res) {
     usuarioModel.listar()
         .then(function (resultado) {

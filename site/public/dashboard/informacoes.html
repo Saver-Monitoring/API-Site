@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saver | Histórico</title>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/index.js"></script>
     <script src="../js/funcoes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/4ea0191552.js" crossorigin="anonymous"></script>
 
     <!-- CSS -->
     <link rel="shortcut icon" href="../assets/logosfundo3.svg">
@@ -16,8 +20,8 @@
     <link rel="stylesheet" href="../css/sidebar.css">
     <link rel="stylesheet" href="../css/ajuda.css">
     <link rel="stylesheet" href="../css/responsividade-dash.css">
-
-<!-- <body onload="atualizarFeed()", onload="validarSessao()"> -->
+</head>
+<body onload="atualizarFeed()", onload="validarSessao()">
     <div class="container">
 
         <!-- COMEÇO ESQUERDA  -->
@@ -80,7 +84,7 @@
                 <div class="profile_details">
                     <img src="../assets/user.png">
                     <div class="name_job">
-                        <div class="name">Usuário</div>
+                        <div id="b_usuario" class="name">Usuário</div>
                         <div class="job">Supervisor</div>
                     </div>
                 </div>
@@ -95,89 +99,108 @@
         <div class="text">Informações</div>
     </div>
     <main>
-    <div class="recent-order2">
-        <table>
-            <thead>
-                <tr>
-                    <th id="numero">Número Rack</th>
-                    <th id="localizacao">Localização Máquina</th>
-                    <th id="status">Status</th>
-                    <th>Mais Informações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="primary">Estável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="primary">Estável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>Bloco 8D</td>
-                    <td class="warning">Instável</td>
-                    <td class="primary"><a href="#">Detalhes</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</main>
+        <div class="recent-order2">
+            <table id="racks">
+                <thead>
+                    <tr>
+                        <th id="numero">Número Rack</th>
+                        <th id="localizacao">Localização Máquina</th>
+                        <th id="status">Status</th>
+                        <th>Mais Informações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </main>
 
-</body>
+    </body>
 
 </html>
+<script>
 
-<!-- JS -->
-<script src="../js/sidebar.js"></script>
-<script src="../js/index.js"></script>
-<script src="../js/funcoes.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://kit.fontawesome.com/4ea0191552.js" crossorigin="anonymous"></script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function limparFormulario() {
+        document.getElementById("form_postagem").reset();
+    }
+
+    function atualizarFeed() {
+        //aguardar();
+        fetch("/avisos/listar").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var feed = document.getElementById("feed_container");
+                    var mensagem = document.createElement("span");
+                    mensagem.innerHTML = "Nenhum resultado encontrado."
+                    feed.appendChild(mensagem);
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var feed = document.getElementById("feed_container");
+                    feed.innerHTML = "";
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+                        // criando e manipulando elementos do HTML via JavaScript
+                        var linhaTabela = document.createElement("tr");
+                        var itemTabela = document.createElement("td");
+                        var itemTabela1 = document.createElement("td");
+                        var itemTabela2 = document.createElement("td");
+                        var itemTabela3 = document.createElement("td");
+                        var ahref = document.createElement("a");
+
+
+
+
+
+
+                        itemTabela.innerHTML = idAquario;
+                        itemTabela1.innerHTML = nomeMaquina;
+                        itemTabela2.innerHTML = statusMaquina;
+                        itemTabela3.innerHTML = "";
+                        ahref.innerHTML = "Detalhes";
+
+                        itemTabela2.className = "warning";
+                        itemTabela3.className = "primary";
+
+                        ahref.setAttribute("href=#");
+
+                        linhaTabela.appendChild(itemTabela);
+                        linhaTabela.appendChild(itemTabela1);
+                        linhaTabela.appendChild(itemTabela2);
+                        linhaTabela.appendChild(itemTabela3);
+                        itemTabela3.appendChild(ahref);
+                    }
+
+                    finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            finalizarAguardar();
+        });
+    }
+
+    function testar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_postagem")));
+
+        var divResultado = document.getElementById("div_feed");
+
+        divResultado.appendChild(document.createTextNode(formulario.get("descricao")));
+        divResultado.innerHTML = formulario.get("descricao");
+
+        finalizarAguardar();
+
+        return false;
+    }
+
+</script>
