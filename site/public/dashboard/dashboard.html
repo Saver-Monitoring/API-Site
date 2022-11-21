@@ -202,7 +202,7 @@
 
     let proximaAtualizacao;
 
-    window.onload = obterDadosGrafico(1);
+    window.onload = obterDadosGrafico(sessionStorage.idComputador);
 
     function alterarTitulo(idAquario) {
         var tituloAquario = document.getElementById("myChart")

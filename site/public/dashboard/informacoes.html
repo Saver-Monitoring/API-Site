@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../css/ajuda.css">
     <link rel="stylesheet" href="../css/responsividade-dash.css">
 </head>
-<body onload="atualizarFeed()", onload="validarSessao()">
+<body onload="atualizarFeed(sessionStorage.ID_USUARIO)", onload="validarSessao()">
     <div class="container">
 
         <!-- COMEÇO ESQUERDA  -->
@@ -100,16 +100,16 @@
     </div>
     <main>
         <div class="recent-order2">
-            <table id="racks">
+            <table >
                 <thead>
                     <tr>
-                        <th id="numero">Número Rack</th>
-                        <th id="localizacao">Localização Máquina</th>
+                        <th id="numero">ID Rack</th>
+                        <th id="localizacao">ID da Máquina</th>
                         <th id="status">Status</th>
                         <th>Mais Informações</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="racks">
                 </tbody>
             </table>
         </div>
@@ -126,12 +126,12 @@
         document.getElementById("form_postagem").reset();
     }
 
-    function atualizarFeed() {
+    function atualizarFeed(idUsuario) {
         //aguardar();
-        fetch("/avisos/listar").then(function (resposta) {
+        fetch(`/avisos/listar/${idUsuario}`).then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
-                    var feed = document.getElementById("feed_container");
+                    var rack = document.getElementById("racks");
                     var mensagem = document.createElement("span");
                     mensagem.innerHTML = "Nenhum resultado encontrado."
                     feed.appendChild(mensagem);
@@ -141,8 +141,8 @@
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
 
-                    var feed = document.getElementById("feed_container");
-                    feed.innerHTML = "";
+                    var rack = document.getElementById("racks");
+                    rack.innerHTML = "";
                     for (let i = 0; i < resposta.length; i++) {
                         var publicacao = resposta[i];
 
@@ -154,27 +154,23 @@
                         var itemTabela3 = document.createElement("td");
                         var ahref = document.createElement("a");
 
-
-
-
-
-
-                        itemTabela.innerHTML = idAquario;
-                        itemTabela1.innerHTML = nomeMaquina;
-                        itemTabela2.innerHTML = statusMaquina;
+                        itemTabela.innerHTML = publicacao.idRack;
+                        itemTabela1.innerHTML = publicacao.idComputador;
+                        itemTabela2.innerHTML = "sim";
                         itemTabela3.innerHTML = "";
                         ahref.innerHTML = "Detalhes";
 
                         itemTabela2.className = "warning";
                         itemTabela3.className = "primary";
 
-                        ahref.setAttribute("href=#");
+                        ahref.setAttribute("onclick", `direcionar(${publicacao.idComputador})`);
 
                         linhaTabela.appendChild(itemTabela);
                         linhaTabela.appendChild(itemTabela1);
                         linhaTabela.appendChild(itemTabela2);
                         linhaTabela.appendChild(itemTabela3);
                         itemTabela3.appendChild(ahref);
+                        rack.appendChild(linhaTabela);
                     }
 
                     finalizarAguardar();
@@ -186,6 +182,11 @@
             console.error(resposta);
             finalizarAguardar();
         });
+    }
+
+    function direcionar(idMaq){
+        sessionStorage.idComputador = idMaq;
+        window.location = "dashboard.html";
     }
 
     function testar() {
