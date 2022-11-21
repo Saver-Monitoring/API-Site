@@ -25,7 +25,8 @@ function cadastrar(nome, email, senha, cpf, cnpj, rua, numero) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO usuario (nomeUsuario, email, cnpj, senha) VALUES ('${nome}', '${email}', '${senha}', '${cpf}', '${cnpj}', '${rua}', '${numero}');
+        INSERT INTO empresa (nome, email, cnpj, senha, rua, numero) VALUES 
+        ('${nome}', '${email}', '${senha}', '${cnpj}', '${rua}', '${numero}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -37,7 +38,8 @@ function cadastrarDependente(cargo, nome, email, senha, idAdmin) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO usuario (fkAdministrador, nomeUsuario, email, cargo, senha) VALUES (${idAdmin}, '${nome}', '${email}', '${cargo}', '${senha}');
+        INSERT INTO usuario (fkAdministrador, nomeUsuario, email, cargo, senha) VALUES 
+        (${idAdmin}, '${nome}', '${email}', '${cargo}', '${senha}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
