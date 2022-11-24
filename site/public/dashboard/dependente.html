@@ -59,6 +59,13 @@
                     <span class="tooltip">Contatos</span>
                 </li>
                 <li>
+                    <a href="chamado.html">
+                        <i class='bx bx-phone-call' ></i>
+                        <span class="links_name">Chamado</span>
+                    </a>
+                    <span class="tooltip">Chamado</span>
+                </li>
+                <li>
                     <a href="dependente.html">
                         <i class='bx bx-user-plus'></i>
                         <span class="links_name">Dependente</span>
@@ -115,6 +122,46 @@
 
         <div class="textInputWrapper">
             <input placeholder="CONFIRMAR SENHA" id="confirmar_senha_input" type="text" class="textInput">
+        </div>
+
+        <button onclick="cadastrar()">
+            <span class="box">
+                Cadastrar
+            </span>
+        </button>
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+        <div id="div_aguardar" style="display: none;" class="loading-div">
+            <img src="../assets/loading.gif" id="loading-gif">
+        </div>
+
+    </div>
+
+    <div class="home_content1">
+        <div class="text">Adicionar Máquina</div>
+    </div>
+    <div class="card-dep1">
+        <div class="textInputWrapper">
+            <input placeholder="PROCESSADOR" id="processador_input" type="text" class="textInput">
+        </div>
+
+        <div class="textInputWrapper">
+            <input placeholder="CPU" id="cpu_input" type="text" class="textInput">
+        </div>
+
+        <div class="textInputWrapper">
+            <input placeholder="QUANTIDADE RAM" id="ram_input" type="text" class="textInput">
+        </div>
+
+        <div class="textInputWrapper">
+            <input placeholder="SISTEMA OPERACIONAL" id="so_input" type="text" class="textInput">
+        </div>
+
+        <div class="textInputWrapper">
+            <input placeholder="QUANTIDADE DE HDD" id="hdd_input" type="text" class="textInput">
         </div>
 
         <button onclick="cadastrar()">

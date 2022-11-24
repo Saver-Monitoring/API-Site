@@ -758,7 +758,25 @@ table tbody tr:last-child td {
     margin-left: 18rem;
 }
 
+.card-dep1 {
+    cursor: pointer;
+    width: 390px;
+    height: 454px;
+    background: var(--color-white);
+    border-radius: 5px;
+    border: 1px solid var(--color-sucess);
+    transition: all .2s;
+    box-shadow: 5px 5px 7px 1px var(--color-sucess);
+    position: absolute;
+    margin-top: 10rem;
+    margin-left: 60rem;
+}
+
 .card-dep:hover {
+    box-shadow: -5px 5px 7px -1px var(--color-sucess);
+}
+
+.card-dep1:hover {
     box-shadow: -5px 5px 7px -1px var(--color-sucess);
 }
 

@@ -387,6 +387,28 @@ body {
     font-weight: 600;
     color: var(--color-dark);
     margin: 12px;
+    margin-top: 3rem;
+    margin-left: 4rem;
+}
+
+.home_content1 .text {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin: 12px;
+    width: 500px;
+    margin-top: 3rem;
+    margin-right: -4rem;
+}
+
+.home_content2 .text {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin: 12px;
+    width: 500px;
+    margin-top: 2rem;
+    margin-left: 22rem;
 }
 
 .sidebar.active ~ .home_content {
