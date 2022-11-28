@@ -201,8 +201,8 @@ main {
     box-shadow: var(--box-shaddow);
     transition: all 300ms ease;
     height: 11rem;
-    width: 13rem;
-    margin-left: -50rem;
+    width: 15rem;
+    margin-left: -25rem;
 }
 
 .kpi1 {
@@ -214,8 +214,8 @@ main {
     box-shadow: var(--box-shaddow);
     transition: all 300ms ease;
     height: 11rem;
-    width: 13rem;
-    margin-left: -75rem;
+    width: 15rem;
+    margin-left: -30rem;
 }
 
 .kpi span{
@@ -260,7 +260,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 15rem;
+    margin-top: 34rem;
     margin-left: 3rem;
 }
 
@@ -532,6 +532,7 @@ table tbody tr:last-child td {
     display: block;
     margin: 1rem auto;
     color: var(--color-primary);
+    cursor: pointer;
 }
 /* COMEÇO HEADER */
 .home_content input[type='date'] {

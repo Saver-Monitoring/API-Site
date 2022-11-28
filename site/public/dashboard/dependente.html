@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../css/ajuda.css">
     <link rel="stylesheet" href="../css/responsividade-dash.css">
 
-<!-- <body onload="validarSessao()"> -->
+ <body onload="validarSessao()">
     <div class="container">
 
         <!-- COMEÇO ESQUERDA  -->
@@ -149,7 +149,7 @@
         </div>
 
         <div class="textInputWrapper">
-            <input placeholder="CPU" id="cpu_input" type="text" class="textInput">
+            <input placeholder="RACK" id="cpu_input" type="text" class="textInput">
         </div>
 
         <div class="textInputWrapper">
@@ -164,19 +164,11 @@
             <input placeholder="QUANTIDADE DE HDD" id="hdd_input" type="text" class="textInput">
         </div>
 
-        <button onclick="cadastrar()">
+        <button onclick="cadastrarMaquina()">
             <span class="box">
                 Cadastrar
             </span>
         </button>
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
-        </div>
-        <div id="div_aguardar" style="display: none;" class="loading-div">
-            <img src="../assets/loading.gif" id="loading-gif">
-        </div>
 
     </div>
 
@@ -262,6 +254,74 @@
                     }, "2000")
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+    // CADASTRO MAQUINA
+    function cadastrarMaquina() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var processadorVar = processador_input.value;
+        var cpuVar = cpu_input.value;
+        var ramVar = ram_input.value;
+        var soVar = so_input.value;
+        var hddVar = hdd_input.value;
+
+
+        if (processadorVar == "" || cpuVar == "" || ramVar == "" || soVar == "" || hddVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrarMaquina", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                processadorServer: processadorVar,
+                cpuServer: cpuVar,
+                ramServer: ramVar,
+                soServer: soVar,
+                hddServer: hddVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                    cardErro.style.display = "block";
+
+                    mensagem_erro.innerHTML = "Cadastro de máquina realizado com sucesso!";
+
+                    limparFormulario();
+                    finalizarAguardar();
+                    setTimeout(() => {
+                        sumirMensagem
+                    }, "2000")
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro da máquina!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);

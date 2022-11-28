@@ -140,10 +140,51 @@ function cadastrarDependente(req, res) {
     }
 }
 
+function cadastrarMaquina(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var processador = req.body.processadorServer;
+    var cpu = req.body.cpuServer;
+    var ram = req.body.ramServer;
+    var so = req.body.soServer;
+    var hdd = req.body.hddServer;
+
+    // Faça as validações dos valores
+    if (processador == undefined) {
+        res.status(400).send("O processador está undefined!");
+    } else if (cpu == undefined) {
+        res.status(400).send("A CPU está undefined!");
+    } else if (ram == undefined) {
+        res.status(400).send("A Ram o está undefined!");
+    } else if (so == undefined) {
+        res.status(400).send("O Sistema Operacional está undefined!");
+    } else if (hdd == undefined) {
+        res.status(400).send("O HDD está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.cadastrarMaquina(processador, cpu, ram, so, hdd)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     entrar,
     cadastrar,
     cadastrarDependente,
+    cadastrarMaquina,
     listar,
     testar
 }

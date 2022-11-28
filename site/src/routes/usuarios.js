@@ -20,6 +20,10 @@ router.post("/cadastrarDependente", function (req, res) {
     usuarioController.cadastrarDependente(req, res);
 })
 
+router.post("/cadastrarMaquina", function (req, res) {
+    usuarioController.cadastrarMaquina(req, res);
+})
+
 router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });

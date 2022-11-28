@@ -45,9 +45,23 @@ function cadastrarDependente(cargo, nome, email, senha, idAdmin) {
     return database.executar(instrucao);
 }
 
+function cadastrarMaquina(processador, cpu, ram, so, hdd) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():",processador, cpu, ram, so, hdd);
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucao = `
+        INSERT INTO computador (fkRack, sistOperacional, processador, qtdRAM, qtdHDD) VALUES 
+        (${cpu}, '${so}', '${processador}', '${ram}', '${hdd}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
     cadastrarDependente,
+    cadastrarMaquina,
     listar,
 };
