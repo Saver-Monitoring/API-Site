@@ -47,3 +47,402 @@
         justify-content: center;
     }
 }
+
+
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 94%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+
+    .home_content{
+        width: 0.7vw;
+    }
+
+    .links_name{
+        display: none;
+    }
+    
+    .logo_content{
+        display: none;
+    }
+
+    .sidebar{
+        width: 8vw;
+        background: transparent;
+    }
+    
+    .sidebar i{
+        color: #194a6b;
+    }
+
+    .sidebar i:hover{
+        background-color: #c4c2c2;
+        transform: 3s;
+    }
+
+    .sidebar img{
+        display: none;
+    }
+
+    .name_job{
+        display: none;
+    }
+
+    .sidebar .profile_content .profile{
+        background: transparent;
+    }
+
+    .profile #log_out{
+        margin-left: -25px;
+        color: #194a6b;
+    }
+
+    .home_content .text{
+        margin-left: -15.7vw;
+    }
+
+    .legenda-pai{
+        padding-right: 15%;
+    }
+
+    /* .kpi{
+        width: 50%;
+        margin-left: 0.2vw;
+    }
+
+    .kpi1{
+        width: 53%;
+        
+    } */
+
+    .kpi-pai{
+        gap: 35rem;
+        grid-template-columns: 1fr;
+        margin: 4.5rem 0 0 20.5rem;
+        width: 20%;
+    }
+    
+    main .recent-order{
+        position: absolute;
+        width: 85%;
+        left: 35.5%;
+        transform: translateX(-50%);
+        margin: 6rem 0 0 10.3rem;
+    }
+
+    main .recent-order1{
+        position: absolute;
+        width: 85%;
+        left: 35.5%;
+        transform: translateX(-50%);
+        margin: 8rem 0 0 10.3rem;
+    }
+
+    .home_content input[type='date'] {
+        margin-left: -1rem;
+    }
+
+    main .recent-order2{
+        position: absolute;
+        width: 85%;
+        left: 35.5%;
+        transform: translateX(-50%);
+        margin: 8rem 0 0 10.3rem;
+    }
+
+    .pipefy{
+        position: absolute;
+        width: 95%;
+        left: 55%;
+        margin: 5rem 0 0 0;
+    }
+
+    .grafico{
+        position: absolute;
+        width: 80%;
+        left: 35.5%;
+        margin: 24rem 0 0 14.8rem;
+        grid-template-columns: 1fr;
+    }
+
+    .insights2{
+        position: absolute;
+        width: 80%;
+        margin-top: 45%;
+        margin-left: -69%;
+    }
+
+    .text{
+        left: 5vw;
+    }
+
+    .card-dep1{
+        position: absolute;
+        width: 47.9%;
+        margin: 45rem 0 0 18.2rem;
+    }
+
+    .card{
+        position: absolute;
+        grid-template-columns: 1fr;
+        margin: 6.8rem 0 0 8.8rem;
+        height: 33%;
+    }
+
+    .card2{
+        position: absolute;
+        grid-template-columns: 1fr;
+        margin: 6.8rem 0 0 25.8rem;
+        height: 33%;
+    }
+
+    .card3{
+        position: absolute;
+        grid-template-columns: 1fr;
+        margin: 6.8rem 0 0 42.8rem;
+        height: 33%;
+    }
+
+    .card4{
+        position: absolute;
+        grid-template-columns: 1fr;
+        margin: 30.8rem 0 0 15.8rem;
+        height: 33%;
+    }
+
+    .card5{
+        position: absolute;
+        grid-template-columns: 1fr;
+        margin: 30.8rem 0 0 35.8rem;
+        height: 33%;
+    }
+}
+/* MEDIA QUERIES - MOBILE */
+
+ @media screen and (max-width: 768px) {
+    .container {
+        width: 94%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+
+    .home_content{
+        width: 0.7vw;
+    }
+
+    .links_name{
+        display: none;
+    }
+    
+    .logo_content{
+        display: none;
+    }
+
+    .sidebar{
+        width: 8vw;
+        background: transparent;
+    }
+    
+    .sidebar i{
+        color: #194a6b;
+    }
+
+    .sidebar i:hover{
+        background-color: #c4c2c2;
+        transform: 3s;
+    }
+
+    .sidebar img{
+        display: none;
+    }
+
+    .name_job{
+        display: none;
+    }
+
+    .sidebar .profile_content .profile{
+        background: transparent;
+    }
+
+    .profile #log_out{
+        margin-left: 5px;
+        color: #194a6b;
+    }
+
+    .profile #log_out:hover{
+        background-color: #c4c2c2;
+        transform: 3s;
+    }
+
+    .home_content .text{
+        margin-left: -28.7vw;
+    }
+
+    .legenda-pai{
+        padding-right: 15%;
+        width: 100%;
+    }
+
+    .legenda{
+        width: 18rem;
+    }
+
+    .legenda .text-legenda {
+        margin-left: 40%;
+        color: white;
+    }
+
+    .legenda1{
+        width: 18rem;
+    }
+
+    .legenda1 .text-legenda1 {
+        margin-left: 40%;
+        color: white;
+    }
+
+    .legenda2{
+        width: 18rem;
+    }
+
+    .legenda2 .text-legenda2 {
+        margin-left: 40%;
+        color: white;
+    }
+
+    .kpi-pai{
+        gap: 27.3rem;
+        grid-template-columns: 1fr;
+        margin: 18.5rem 0 0 -4.2rem;
+        width: 70%;
+    }
+
+    .kpi1{
+        margin-left: -25rem;
+    }
+
+    .kpi{
+        margin-top: 40vh;
+        position: absolute;
+ 
+    }
+
+    main .recent-order{
+        position: absolute;
+        width: 80%;
+        left: 26.2%;
+        transform: translateX(-50%);
+        margin: 6rem 0 0 10.3rem;
+    }
+
+    main .recent-order1{
+        position: absolute;
+        width: 80%;
+        left: 26.5%;
+        transform: translateX(-50%);
+        margin: 8rem 0 0 10.3rem;
+        font-size: 0.8rem;
+
+    }
+
+    .home_content input[type='date'] {
+        margin-left: -2rem;
+    }
+
+    main .recent-order2{
+        position: absolute;
+        width: 80%;
+        left: 26.5%;
+        transform: translateX(-50%);
+        margin: 8rem 0 0 10.3rem;
+    }
+
+    .home_content2 .text{
+        margin-left: 35vw;
+    }
+
+    .pipefy {
+        position: absolute;
+        width: 10%;
+        left: 120%;
+        margin: 5rem 0 0 0;
+    }
+
+    .pipefy  iframe{
+      width: 790%;
+    }
+
+    .grafico{
+        position: absolute;
+        width: 40%;
+        left: 60.5%;
+        margin: 40rem 0 0 8.8rem;
+        grid-template-columns: 2fr;
+    }
+
+    .insights2{
+        position: absolute;
+        width: 40%;
+        margin-top: 260%;
+        margin-left: -355%;
+    }
+
+    .text{
+        left: 5vw;
+    }
+
+    .card-dep{
+        position: absolute;
+        width: 80.9%;
+        margin: 3rem 0 0 6.2rem;
+    }
+
+    .card-dep1{
+        position: absolute;
+        width: 80.9%;
+        margin: 45rem 0 0 6.2rem;
+    }
+
+    .card{
+        position: absolute;
+        grid-template-columns: 1fr;
+        margin: 6.8rem 0 0 9.8rem;
+        height: 45%;
+    }
+
+    .card2{
+        position: absolute;
+        grid-template-columns: 1fr;
+        margin: 34.8rem 0 0 9.8rem;
+        height: 45%;
+    }
+
+    .card3{
+        position: absolute;
+        grid-template-columns: 1fr;
+        margin: 64.8rem 0 0 9.8rem;
+        height: 45%;
+    }
+
+    .card4{
+        position: absolute;
+        grid-template-columns: 1fr;
+        margin: 94.8rem 0 0 9.8rem;
+        height: 45%;
+    }
+
+    .card5{
+        position: absolute;
+        grid-template-columns: 1fr;
+        margin: 124.8rem 0 0 9.8rem;
+        height: 45%;
+    }
+    @keyframes showMenu {
+        to {
+            left: 0;
+        }
+        
+    }
+}
+
