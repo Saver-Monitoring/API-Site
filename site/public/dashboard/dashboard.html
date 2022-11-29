@@ -269,7 +269,7 @@
         console.log(dadoCPU.datasets)
         console.log('----------------------------------------------')
         console.log('Labels:')
-        console.log(labels2)
+        console.log(labels)
         console.log('Dados RAM:')
         console.log(dadoRAM.datasets)
         console.log('----------------------------------------------')
@@ -342,6 +342,14 @@
                         myChart.update();
                     }
 
+                    if(novoRegistro[0].usoCPU >= 10) {
+                        span_cpu.style.background = "#c94236" //vermelho
+                    } else if (novoRegistro[0].usoCPU >= 5 && novoRegistro[0].usoCPU <= 9.9) {
+                        span_cpu.style.background = "#d3b323" //amarelo
+                    } else if (novoRegistro[0].usoCPU < 5) {
+                        span_cpu.style.background = "#2C92D5" //azul
+                    }
+
                     if (novoRegistro[0].momento_grafico == dadoRAM.labels[dadoRAM.labels.length - 1]) {
                         console.log("---------------------------------------------------------------")
                         console.log("Como não há dados novos para captura, o gráfico não atualizará.")
@@ -353,14 +361,22 @@
                         ram_kpi.innerHTML = `${novoRegistro[0].usoRAM} GiB`
                     } else {
                         // tirando e colocando valores no gráfico
-                        dadoRAM.labels2.shift(); // apagar o primeiro
-                        dadoRAM.labels2.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+                        dadoRAM.labels.shift(); // apagar o primeiro
+                        dadoRAM.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
 
                         dadoRAM.datasets[0].data.shift();  // apagar o primeiro de umidade
                         dadoRAM.datasets[0].data.push(novoRegistro[0].usoRAM); // incluir uma nova medida de umidade
                         ram_kpi.innerHTML = `${novoRegistro[0].usoRAM} GiB`
 
                         myChart2.update();
+                    }
+
+                    if(novoRegistro[0].usoRAM >= 8) {
+                        span_memoria.style.background = "#c94236" //vermelho
+                    } else if (novoRegistro[0].usoRAM >= 5 && novoRegistro[0].usoRAM < 8) {
+                        span_memoria.style.background = "#d3b323" //amarelo
+                    } else if (novoRegistro[0].usoRAM < 5) {
+                        span_memoria.style.background = "#2C92D5" //azul
                     }
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
