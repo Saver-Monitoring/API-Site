@@ -92,7 +92,7 @@
                     <img src="../assets/user.png">
                     <div class="name_job">
                         <div id="b_usuario" class="name">Usuário</div>
-                        <div class="job">Supervisor</div>
+                        <div id="b_cargo" class="job">Supervisor</div>
                     </div>
                 </div>
                 <a href="../login.html" class='bx bx-log-out' id="log_out"></a>
@@ -128,6 +128,7 @@
 <script>
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    b_cargo.innerHTML = sessionStorage.CARGO;
 
     function limparFormulario() {
         document.getElementById("form_postagem").reset();
@@ -141,7 +142,7 @@
                     var rack = document.getElementById("racks");
                     var mensagem = document.createElement("span");
                     mensagem.innerHTML = "Nenhum resultado encontrado."
-                    feed.appendChild(mensagem);
+                    rack.appendChild(mensagem);
                     throw "Nenhum resultado encontrado!!";
                 }
 

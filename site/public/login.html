@@ -135,10 +135,11 @@
 
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nomeUsuario;
+                    sessionStorage.CARGO = json.cargo;
                     sessionStorage.ID_USUARIO = json.idUsuario;
 
                     setTimeout(function () {
-                        window.location = "dashboard/dashboard.html";
+                        window.location = "dashboard/informacoes.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
